@@ -1,0 +1,15 @@
+{
+  "name": "5.2d",
+  "version": "1.0.0",
+  "description": "This is a simple web application that is designed to run inside a Docker container. It listens on port 3000 inside the container and can be accessed via port 8080 on the host machine. The application can serve a webpage or provide API responses based on the configuration.\r # Prerequisites\r We have to make sure that we have installed:\r - Node.js\r - npm\r - Express.js\r - Docker\r # Installation and Setup\r - Push code to GitHub\r - git add .\r - git commit -m \"my filename\"\r - git push origin master\r # Steps to form the image\r - Tag the docker image: docker tag anenaghosh/myapp gcr.io/upbeat-button-455906-m1/anenaghosh/myapp:latest\r - Push the docker image: docker push gcr.io/upbeat-button-455906-m1/anenaghosh/myapp:latest\r - Pull the docker image: docker pull gcr.io/upbeat-button-455906-m1/anenaghosh/myapp:latest\r - Run the Docker Image: docker run -d -p 8080:3000 gcr.io/upbeat-button-455906-m1/anenaghosh/myapp:latest\r # Run the application\r - http://localhost:8080",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
