@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sit737-app-deployment
+spec:
+  replicas: 3  # Number of pods to deploy
+  selector:
+    matchLabels:
+      app: sit737-app  # Label selector for the pods
+  template:
+    metadata:
+      labels:
+        app: sit737-app
+    spec:
+      containers:
+        - name: sit737-app
+          image: anenaghosh/sit737-app:v3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80  # Expose port 80
+          env:
+            - name: NODE_ENV
+              value: "production"  # Set environment variable for production mode
+          resources:
+            requests:
+              memory: "256Mi"  # Memory requested by the container
+              cpu: "250m"  # CPU requested by the container
+            limits:
+              memory: "512Mi"  # Max memory allowed for the container
+              cpu: "500m"  # Max CPU allowed for the container
+         
